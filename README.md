@@ -13,3 +13,6 @@
  
 ### SOLUTION DESCRIPTION
 - My solution is fairly straightforward. It operates using a single nested loop to iterate through the files in the `Programming-Assignment-Data` folder to grab the xml files one at a time. When it finds an xml, it locates the associated png for later editing. Then, it parses and searches the xml using the xpath function of lxml to find all the leaf nodes. With a complete list of leaf nodes, the program then maps the bounds attribute of each node to usable coordinates. These coordinates are then used to draw a rectangle for each node on the png file. When all of the leaf nodes have been drawn in, the program saves the file to the `Edited-Images` folder. When everything has been completed, the program prints `Completed` to the command line.
+
+### NOTES
+- I found that there was a missing `</node>` in the end of the `com.apalon.ringtones.xml` which I added back in. If you run this on your end and it throws an error related to line 73, that is why. Just add in the missing `</node>` and it will work.
